@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Display</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    
+    <a href="/{{my_string}}/" class="btn btn-primary ml-4 mr-4 mt-5" style="width: 70px; height: 30px;font-size: 10px;">Back</a>
+    <div id="cardContaine">
+      <h5 style="text-align: center;color: black;font-weight: bold;font-size: 28px;">{{title}}</h5>
+    </div>
+    
+  </div>
+  <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      width: 50%;
+      margin: 10px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body style="background-color: #ecc19c;">
+  <div class="card-container mb-5">
+    {% for list in obj1 %}
+    <div class="card" style="background-color: #f5f0e1;">
+        <div style="align-items: center; background-color: grey;">
+            <h1 style="font-size: 26px; font-weight:bolder;text-align: center;">{{list.topic}}</h1>
+        </div>
+        <div class="d-flex flex-row" style="justify-content: space-between;margin-top: 12px;">
+          {% if list.added %}<h3 style="font-size: 14px;">{{list.added}}</h3>{% endif %}
+            {% if list.published %}<h3 style="font-size: 14px;">Published:{{list.published}}</h3>{% endif %}
+        </div>
+        <div>
+          <h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Title:</span>{{list.title}}</h3>
+        </div>
+        <div class="d-flex flex-row" style="justify-content: space-between;">
+          <div>
+            {% if list.region %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Region:</span>{{list.region}}</h3>{% endif %}
+            {% if list.country %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Country:</span>{{list.country}}</h3>{% endif %}
+            {% if list.pestle %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Pestle:</span>{{list.pestle}}</h3>{% endif %}
+            {% if list.source %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Source:</span>{{list.source}}</h3>{% endif %}
+            {% if list.impact %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Impact:</span>{{list.impact}}</h3>{% endif %}
+            {% if list.start_year %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Start Year:</span>{{list.start_year}}</h3>{% endif %}
+            {% if list.end_year %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">End Year:</span>{{list.end_year}}</h3>{% endif %}
+            {% if list.insight %}<h3 style="font-size: 14px;"><span style="color: black;font-weight: bold;margin-right: 5px;">Insight:</span>{{list.insight}}</h3>{% endif %}
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

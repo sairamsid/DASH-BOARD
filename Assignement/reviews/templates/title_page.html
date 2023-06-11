@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Display</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div id="cardContainer" class="mt-5">
+      <h5 >{{title}}</h5>
+    <!-- {% for list in new_data_file %}
+        <div class="card" style="width: 10%;flex-wrap: wrap;">
+          <div class="card-body">
+            <p class="card-text">{{list}}</p>
+            <a href="#" class="btn btn-primary" style="width: 70px; height: 30px;font-size: 10px;">click here</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Card Title</h3>
+          <p>Field 1: Value 1</p>
+          <p>Field 2: Value 2</p>
+          <p>Field 3: Value 3</p>
+        </div>
+    {% endfor %}   -->
+      
+    </div>
+    
+  </div>
+  <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      width: 200px;
+      margin: 10px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container" style="background-color: #2F3C7E;">
+    {% for list in new_data_file %}
+    <div class="card" style="align-items: center;background-color: #FBEAEB;">
+      <h3 style="font-size: 14px;">{{list}}</h3>
+      <a href="/{{list}}/" class="btn btn-primary" style="width: 70px; height: 30px;font-size: 10px;">click here</a>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+<!-- 
+<script>
+    // console.log(data_file)
+    const jsonData = [
+  {
+    title: 'Card 1',
+    description: 'This is the first card.',
+    image: 'https://example.com/image1.jpg'
+  },
+  {
+    title: 'Card 2',
+    description: 'This is the second card.',
+    image: 'https://example.com/image2.jpg'
+  },
+  {
+    title: 'Card 3',
+    description: 'This is the third card.',
+    image: 'https://example.com/image3.jpg'
+  }
+];
+
+// Function to create a card element
+function createCard(cardData) {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const image = document.createElement('img');
+  image.src = cardData.image;
+  image.className = 'card-img-top';
+  image.alt = cardData.title;
+
+  const cardBody = document.createElement('div');
+  cardBody.className = 'card-body';
+
+  const title = document.createElement('h5');
+  title.className = 'card-title';
+  title.textContent = cardData.title;
+
+  const description = document.createElement('p');
+  description.className = 'card-text';
+  description.textContent = cardData.description;
+
+  cardBody.appendChild(title);
+  cardBody.appendChild(description);
+  card.appendChild(image);
+  card.appendChild(cardBody);
+
+  return card;
+}
+
+// Function to render cards based on JSON data
+function renderCards(data) {
+  const cardContainer = document.getElementById('cardContainer');
+
+  data.forEach((item) => {
+    const card = createCard(item);
+    cardContainer.appendChild(card);
+  });
+}
+
+// Render the cards
+renderCards(jsonData);
+</script> -->
